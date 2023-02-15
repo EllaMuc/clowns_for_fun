@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
-  def home
+  def index
+    @clown = Clown.all
   end
 end
