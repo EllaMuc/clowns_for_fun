@@ -4,7 +4,7 @@
     <%= image_tag @clown.cover_photo(nil), width: "100%" %>
   </div>
 </div>
-<%# <br> %> %>
+<%# <br> %>
 
 <div class="row">
 <!-- LEFT PANEL -->
@@ -14,17 +14,18 @@
 
     <!-- Listing Name -->
     <div class="row">
-      <div class="col-md-8">
-        <h1><%= @clown.name %></h1>
-        <%= @clown.address  %>
+      <div class="col-md-12">
+        <h1>That's my name <%= @clown.name %></h1>
+        <p>Address: <%= @clown.address  %></p>
+        <p>Price: <%= @clown.price %></p>
+        <p>What I can offer: <%= @clown.description  %></p>
       </div>
 
       <%# <div class="col-md-4 text-center">
-      <%= image_tag avatar_url(@clown.user), class: "img-circle avatar-large"  %> <br>
-      <%# <%= @clown.user.name %> %>
+      <%= image_tag avatar_url(@clown.user), class: "img-circle avatar-large"  %>
+      <%# <%= @clown.user.name %>
 
-      <%# </div> %> %>
-
+      <%# </div> %>
 
 
     </div>
