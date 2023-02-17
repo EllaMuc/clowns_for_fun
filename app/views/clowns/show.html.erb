@@ -2,9 +2,12 @@
 <%# <div class="row">
   <div class="col-md-12">
     <%= image_tag @clown.cover_photo(nil), width: "100%" %>
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->
 <%# <br> %>
+
+<%= cl_image_tag("pr9bwy69gmcf0zh6af2a",
+width: 800, height: 300, crop: :fill) %>
 
 <div class="row">
 <!-- LEFT PANEL -->
@@ -21,11 +24,9 @@
         <p>What I can offer: <%= @clown.description  %></p>
       </div>
 
-      <%# <div class="col-md-4 text-center">
-      <%= image_tag avatar_url(@clown.user), class: "img-circle avatar-large"  %>
-      <%# <%= @clown.user.name %>
-
-      <%# </div> %>
+      <div class="col-md-4 text-center">
+      <%= cl_image_tag @clown.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
 
 
     </div>
@@ -53,16 +54,18 @@
     </div>
     <hr>
 
-    <!-- Carousel of Photo -->
-    <!-- <div class="row"> -->
 
-    <!-- </div> -->
+
+    <!-- Carousel of Photo -->
+    <div class="row">
+      <% @article.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    </div>
     <hr>
-  </div>
 
 
   <!-- RIGHT PANEL -->
   <!-- <div class="col-md-4"> -->
     <!-- Reservation Form -->
   <!-- </div> -->
-</div>
