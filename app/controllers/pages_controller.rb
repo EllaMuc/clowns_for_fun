@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @clown = Clown.all
+    @clowns = Clown.all
   end
   def create
     @clown = Clown.create
