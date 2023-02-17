@@ -1,8 +1,15 @@
+<div>
+<div class="navbar">
+  <img src="images/logo.png" alt="logo">
+</div>
 <h1>Clowns for fun</h1>
 <p>This is the clown home page</p>
 
 <% @clowns.each do |clown| %>
 <ul>
+<div>
 <li><%= clown.name %></li>
+</div>
 </ul>
 <% end %>
+</div>
