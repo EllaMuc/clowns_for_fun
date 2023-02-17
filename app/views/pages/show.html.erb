@@ -1,0 +1,67 @@
+<!-- Image -->
+<div class="row">
+  <div class="col-md-12">
+    <%= image_tag @clown.cover_photo(nil), width: "100%" %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+<!-- LEFT PANEL -->
+
+  <!-- LEFT PANEL -->
+  <div class="col-md-8">
+
+    <!-- Listing Name -->
+    <div class="row">
+      <div class="col-md-8">
+        <h1><%= @clown.name %></h1>
+        <%= @clown.address  %>
+      </div>
+
+      <div class="col-md-4 text-center">
+      <%= image_tag avatar_url(@clown.user), class: "img-circle avatar-large"  %> <br>
+      <%= @clown.user.name %>
+
+      </div>
+
+
+
+    </div>
+    <hr>
+
+    <!-- Clown Info -->
+    <div class="row text-babu">
+      <div class="row text-center row-space-1">
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-user-circle-o fa-2x"></i>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- About -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>About this listing</h3>
+        <p><%=@clown.description %></p>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Carousel of Photo -->
+    <!-- <div class="row"> -->
+
+    <!-- </div> -->
+    <hr>
+  </div>
+
+
+  <!-- RIGHT PANEL -->
+  <!-- <div class="col-md-4"> -->
+    <!-- Reservation Form -->
+  <!-- </div> -->
+</div>
