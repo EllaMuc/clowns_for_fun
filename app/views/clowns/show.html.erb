@@ -1,0 +1,71 @@
+<!-- Image -->
+<%# <div class="row">
+  <div class="col-md-12">
+    <%= image_tag @clown.cover_photo(nil), width: "100%" %>
+  <!-- </div> -->
+<!-- </div> -->
+<%# <br> %>
+
+<%= cl_image_tag("pr9bwy69gmcf0zh6af2a",
+width: 800, height: 300, crop: :fill) %>
+
+<div class="row">
+<!-- LEFT PANEL -->
+
+  <!-- LEFT PANEL -->
+  <div class="col-md-8">
+
+    <!-- Listing Name -->
+    <div class="row">
+      <div class="col-md-12">
+        <h1>That's my name <%= @clown.name %></h1>
+        <p>Address: <%= @clown.address  %></p>
+        <p>Price: <%= @clown.price %></p>
+        <p>What I can offer: <%= @clown.description  %></p>
+      </div>
+
+      <div class="col-md-4 text-center">
+      <%= cl_image_tag @clown.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+
+
+    </div>
+    <hr>
+
+    <!-- Clown Info -->
+    <div class="row text-babu">
+      <div class="row text-center row-space-1">
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-user-circle-o fa-2x"></i>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <!-- About -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3>About this listing</h3>
+        <p><%=@clown.description %></p>
+      </div>
+    </div>
+    <hr>
+
+
+
+    <!-- Carousel of Photo -->
+    <div class="row">
+      <% @article.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+    </div>
+    <hr>
+
+
+  <!-- RIGHT PANEL -->
+  <!-- <div class="col-md-4"> -->
+    <!-- Reservation Form -->
+  <!-- </div> -->
