@@ -1,10 +1,10 @@
 <!-- Image -->
-<div class="row">
+<%# <div class="row">
   <div class="col-md-12">
     <%= image_tag @clown.cover_photo(nil), width: "100%" %>
   </div>
 </div>
-<br>
+<%# <br> %> %>
 
 <div class="row">
 <!-- LEFT PANEL -->
@@ -19,11 +19,11 @@
         <%= @clown.address  %>
       </div>
 
-      <div class="col-md-4 text-center">
+      <%# <div class="col-md-4 text-center">
       <%= image_tag avatar_url(@clown.user), class: "img-circle avatar-large"  %> <br>
-      <%= @clown.user.name %>
+      <%# <%= @clown.user.name %> %>
 
-      </div>
+      <%# </div> %> %>
 
 
 
