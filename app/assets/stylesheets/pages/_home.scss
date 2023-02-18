@@ -13,4 +13,10 @@ img {
   justify-content: center;
   align-items: center;
   height: 90px;
+ul li{
+  list-style-type: none;
+}
+
+.bg-card-image{
+  background-image: asset-url("circus_insane.jpg");
 }
