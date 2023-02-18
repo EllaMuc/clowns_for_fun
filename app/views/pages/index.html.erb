@@ -1,30 +1,26 @@
-<<<<<<< HEAD
 <div>
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
       Home
     </a>
-    <a>Become the Clown</a>
-    <a>Book<a>
+    <%= link_to "Become a Clown", "/clowns/new" %>
+    <a>Book</a>
+    <%= link_to "Sign in", "/users/sign_in" %>
   </nav>
-  
   <h1>Clowns for Fun!! </h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-  <div class="bg-image"
-     style="background-image:  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1))">
+  <div class="bg-card-image">
     <% @clowns.each do |clown| %>
       <div class="d-inline-flex p-2">
         <ul>
           <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <li><h5 class="card-title"><%= clown.name %></h5>
-                  <a href="#" class="btn btn-primary"> book</a>
+              <li>
+                <h5 class="card-title"><%= clown.name %></h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                <a href="#" class="btn btn-primary">Book</a>
+                <a href="#" class="btn btn-info">Info</a>
               </li>
-=======
-<h1>Clowns for fun</h1>
-<p>This is the clown home page</p>
->>>>>>> 29e6868da6081d928f0f003363e6c1c04824030f
-
           </div>
         </ul>
       </div>
