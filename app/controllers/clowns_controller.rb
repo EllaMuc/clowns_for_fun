@@ -7,6 +7,18 @@ class ClownsController < ApplicationController
   def show
   end
 
+
+  def edit
+  end
+
+  def update
+    if @clown.update(clown_params)
+      redirect_to @clown
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def new
     @clown = Clown.new
   end
