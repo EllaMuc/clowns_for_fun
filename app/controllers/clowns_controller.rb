@@ -5,13 +5,13 @@ class ClownsController < ApplicationController
   end
 
   def edit
-  end 
+  end
 
   def update
     if @clown.update(clown_params)
       redirect_to @clown
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -25,6 +25,6 @@ class ClownsController < ApplicationController
   end
 
   def clown_params
-    params.require.(:clown).permit(:name, :address, :price, :description)
+    params.require(:clown).permit(:name, :address, :price, :description)
   end
 end
