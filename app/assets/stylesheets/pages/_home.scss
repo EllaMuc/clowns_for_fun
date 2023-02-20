@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+.navbar img{
+  width: 50px
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+ul li{
+  list-style-type: none;
+}
+
+.bg-card-image{
+  background-image: asset-url("circus_insane.jpg");
+}

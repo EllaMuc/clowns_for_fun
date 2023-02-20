@@ -1,8 +1,12 @@
 class ClownsController < ApplicationController
-  before_action :set_clown
+  before_action :set_clown, only: :show
+  def index
+    @clowns = Clown.all
+  end
 
   def show
   end
+
 
   def edit
   end
@@ -15,8 +19,19 @@ class ClownsController < ApplicationController
     end
   end
 
+  def new
+    @clown = Clown.new
+  end
 
-
+  def create
+    @clown = Clown.new(clown_params)
+    @clown.user = current_user
+    if @clown.save
+      redirect_to clown_path(@clown)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   private
 
