@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :clowns, except: [:index]
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :reservations, only: [:create]
 end
