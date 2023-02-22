@@ -1,8 +1,11 @@
-<%= form_for([@clown, @clown.reservations.new]) do |f|  %>
-  <%= f.text_field :start_date  %>
-  <%= f.text_field :end_date  %>
+<div>
+  <%= simple_form_for ([@clown, @reservation]), data: { controller: 'flatpickr'} do |f|  %>
+    <%= f.input :start_date, as: :string, input_html: { data: {
+      flatpickr_target: "startTime" } } %>
+    <%= f.input :end_date, as: :string, input_html: { data: {
+      flatpickr_target: "endTime" } } %>
 
-<br>
-
-<%= f.submit "Book Now", class: "btn btn-normal btn-block"  %>
-<% end %>
+  <br>
+  <%= f.submit "Book Now", class: "btn btn-primary"  %>
+  <% end %>
+</div>
