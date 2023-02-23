@@ -24,7 +24,7 @@
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <li>
-                <img src="asset-url(master_ken.jpg)" alt= <%= clown.name %>>
+                <%= cl_image_tag clown.photo.key %>
                 <h5 class="card-title"><%= clown.name %></h5>
                 <p class="card-text"><%= clown.description %></p>
                 <a href="#" class="btn btn-primary">Book</a>
