@@ -44,16 +44,10 @@ width: 800, height: 300, crop: :fill) %>
       </div>
     </div>
     <hr>
-    
-    <!-- Carousel of Photo -->
-    <div class="row">
-      <% @article.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    </div>
-    <hr>
-    
+
   <!-- RIGHT PANEL -->
-  <!-- <div class="col-md-4"> -->
-    <!-- Reservation Form -->
-  <!-- </div> -->
+  <div class="col-md-4">
+      <!-- Reservation Form -->
+      <%= render 'reservations/form'  %>
+    </div>
+  </div>
