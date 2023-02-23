@@ -1,8 +1,38 @@
-<h1>Clowns for fun</h1>
-<p>This is the clown home page</p>
+<div class="bg-card-image">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      Home
+    </a>
+    <%= link_to "Become a Clown", "/clowns/new" %>
+    <a>Book</a>
 
-<% @clowns.each do |clown| %>
-<ul>
-<li><%= clown.name %></li>
-</ul>
-<% end %>
+    <% if current_user.nil?  %>
+      <%= link_to "Sign up", "/users/sign_up" %>
+      <%= link_to "Sign in", "/users/sign_in" %>
+    <% else %>
+      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+    <% end %>
+  </nav>
+  <div class="banner_image">
+    <h1>Clowns for Fun!! </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+  </div>
+  <div>
+    <% @clowns.each do |clown| %>
+      <div class="d-inline-flex p-2">
+        <ul>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <li>
+                <img src="asset-url(master_ken.jpg)" alt= <%= clown.name %>>
+                <h5 class="card-title"><%= clown.name %></h5>
+                <p class="card-text"><%= clown.description %></p>
+                <a href="#" class="btn btn-primary">Book</a>
+                <div class= "btn btn-info"><%= link_to "info", clown_path(clown) %></div>
+              </li>
+          </div>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

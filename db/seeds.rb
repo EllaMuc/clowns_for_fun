@@ -18,7 +18,7 @@ user2 = User.create(email: "user2@gmail.com", password: "123456")
 
 puts "create 5 clowns"
 
-5.times do
-  clown = Clown.create(name: Faker::FunnyName.name, user_id: user1.id)
-  puts "#{clown.name}"
+20.times do
+  clown = Clown.create(name: Faker::FunnyName.name, description: Faker::Lorem.paragraph_by_chars(number: 150, supplemental: false), user_id: user1.id)
+  puts "#{clown.name} #{clown.description}"
 end

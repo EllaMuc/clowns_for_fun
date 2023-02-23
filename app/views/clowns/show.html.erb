@@ -1,10 +1,5 @@
-<!-- Image -->
-<%# <div class="row">
-  <div class="col-md-12">
-    <%= image_tag @clown.cover_photo(nil), width: "100%" %>
-  </div>
-</div>
-<%# <br> %> %>
+<%= cl_image_tag("pr9bwy69gmcf0zh6af2a",
+width: 800, height: 300, crop: :fill) %>
 
 <div class="row">
 <!-- LEFT PANEL -->
@@ -14,19 +9,17 @@
 
     <!-- Listing Name -->
     <div class="row">
-      <div class="col-md-8">
-        <h1><%= @clown.name %></h1>
-        <%= @clown.address  %>
+
+      <div class="col-md-12">
+        <h1>That's my name <%= @clown.name %></h1>
+        <p>Address: <%= @clown.address  %></p>
+        <p>Price: <%= @clown.price %></p>
+        <p>What I can offer: <%= @clown.description  %></p>
       </div>
 
-      <%# <div class="col-md-4 text-center">
-      <%= image_tag avatar_url(@clown.user), class: "img-circle avatar-large"  %> <br>
-      <%# <%= @clown.user.name %> %>
-
-      <%# </div> %> %>
-
-
-
+      <div class="col-md-4 text-center">
+      <%= cl_image_tag @clown.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
     </div>
     <hr>
 
@@ -52,16 +45,9 @@
     </div>
     <hr>
 
-    <!-- Carousel of Photo -->
-    <!-- <div class="row"> -->
-
-    <!-- </div> -->
-    <hr>
-  </div>
-
-
   <!-- RIGHT PANEL -->
-  <!-- <div class="col-md-4"> -->
-    <!-- Reservation Form -->
-  <!-- </div> -->
-</div>
+  <div class="col-md-4">
+      <!-- Reservation Form -->
+      <%= render 'reservations/form'  %>
+    </div>
+  </div>
