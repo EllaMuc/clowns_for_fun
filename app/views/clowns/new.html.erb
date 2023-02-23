@@ -1,15 +1,4 @@
 <h1>Create a new clown</h1>
 <div class = "card d-flex">
-<%= form_with model: @clown do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.submit %>
-<% end %>
-
+  <%= render "form", clown: @clown %>
 </div>

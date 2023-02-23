@@ -1,11 +1,31 @@
 <%= cl_image_tag("pr9bwy69gmcf0zh6af2a",
 width: 800, height: 300, crop: :fill) %>
+<!-- Image -->
+<p id="notice"><%= notice %></p>
 
-<div class="row">
+<p>
+
+<%= cl_image_tag @article.photo.key, height: 300, width: 350, crop: :fill %>
+
+</p>
+  <strong>Body:</strong>
+  <%= @clown.body %>
+
+<%= link_to 'Edit', edit_clown_path(@clown) %> |
+<%= link_to 'Back', roor_path %>
+
+<%# <div class="row">
+  <div class="col-md-12">
+
+  </div>
+</div> %>
+
+
+<%# <div class="row"> %>
 <!-- LEFT PANEL -->
 
   <!-- LEFT PANEL -->
-  <div class="col-md-8">
+  <%# <div class="col-md-8"> %>
 
     <!-- Listing Name -->
     <div class="row">
@@ -45,6 +65,17 @@ width: 800, height: 300, crop: :fill) %>
     </div>
     <hr>
 
+<<<<<<< Updated upstream
+=======
+    <!-- Carousel of Photo -->
+    <!-- <div class="row"> -->
+
+    <!-- </div> -->
+    <%# <hr> %>
+  </div>
+
+
+>>>>>>> Stashed changes
   <!-- RIGHT PANEL -->
   <div class="col-md-4">
       <!-- Reservation Form -->
