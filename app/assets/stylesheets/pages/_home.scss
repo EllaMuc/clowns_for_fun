@@ -8,12 +8,12 @@ img {
   overflow: clip;
 }
 
-.navbar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-}
+// .navbar{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 90px;
+// }
 ul li{
   list-style-type: none;
 }
@@ -21,3 +21,17 @@ ul li{
 .bg-card-image{
   background-image: asset-url("circus_insane.jpg");
 }
+
+.banner_image{
+  background-image: asset-url("maxresdefault.jpg");
+  background-size: fill;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px #000000;
+}
+
+.banner_image h1{
+  text-align: center;
+
+}
+
