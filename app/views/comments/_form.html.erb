@@ -1,0 +1,6 @@
+<%= form_with(model: [clown, clown.comments.build]) do |f|%>
+  <div class="form-control">
+    <%= f.text_field :body %>
+    <%= f.submit "Reply", class: "btn btn-primary mt-1" %>
+  </div>
+<% end %>

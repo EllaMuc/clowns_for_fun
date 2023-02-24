@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :clowns, except: [:index] do
     resources :reservations, only: [:create]
+    # clown/1/comments/4
+    resources :comments
   end
+
 end

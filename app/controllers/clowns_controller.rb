@@ -6,6 +6,7 @@ class ClownsController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    @comments = @clown.comments.order(created_at: :desc)
   end
 
 
