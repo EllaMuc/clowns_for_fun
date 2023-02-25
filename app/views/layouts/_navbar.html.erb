@@ -1,0 +1,55 @@
+<div class="bg-card-image">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      Home
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Become a Clown", "/clowns/new", class: "nav-link border border-primary rounded-pill px-3" %>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Book</a>
+        </li>
+        <% if current_user.nil?  %>
+          <li class="nav-item">
+            <%= link_to "SignUp", "/users/sign_up", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "SignIn", "/users/sign_in", class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+  <div class="banner_image">
+    <h1>Clowns for Fun!! </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+  </div>
+  <div>
+    <% @clowns.each do |clown| %>
+      <div class="d-inline-flex p-2">
+        <ul>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <li>
+                <%= cl_image_tag clown.photo.key %>
+                <h5 class="card-title"><%= clown.name %></h5>
+                <p class="card-text"><%= clown.description %></p>
+                <a href="#" class="btn btn-primary">Book</a>
+                <div class= "btn btn-info"><%= link_to "info", clown_path(clown) %></div>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
