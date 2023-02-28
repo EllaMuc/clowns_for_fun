@@ -12,8 +12,8 @@ User.destroy_all
 
 puts "creates two users"
 
-user1 = User.create(email: "user1@gmail.com", password: "123456")
-user2 = User.create(email: "user2@gmail.com", password: "123456")
+user1 = User.create!(first_name: "David", email: "user1@gmail.com", password: "123456")
+user2 = User.create!(first_name: "Maria", email: "user2@gmail.com", password: "123456")
 
 puts "create 5 clowns"
 
@@ -21,6 +21,6 @@ puts "create 5 clowns"
   clown = Clown.new(name: Faker::FunnyName.name, description: Faker::Lorem.paragraph_by_chars(number: 150, supplemental: false), user_id: user1.id)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
   clown.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-  clown.save
+  clown.save!
   puts "#{clown.name} #{clown.description}"
 end
